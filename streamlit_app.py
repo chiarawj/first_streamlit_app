@@ -73,7 +73,8 @@ if streamlit.button('Get Fruit Load List'):
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
     
-
+#dont run anything past here while we troubleshoot
+streamlit.stop()
 
 
 #add second text entry box 
@@ -81,4 +82,4 @@ add_my_fruit = streamlit.text_input('What fruit would you like to add?', 'jackfr
 streamlit.write('Thanks for adding', add_my_fruit)
 
 #test thing 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+#my_cur.execute("insert into fruit_load_list values ('from streamlit')")
