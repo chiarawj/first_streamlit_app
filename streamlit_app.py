@@ -14,7 +14,6 @@ streamlit.text('🥑🍞 Avacado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-#import pandas
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 # choose fruit name column as index 
 my_fruit_list = my_fruit_list.set_index('Fruit')
@@ -45,20 +44,6 @@ try:
 except URLError as e:
   streamlit.error()
 
-#streamlit.write('The user entered', fruit_choice)
-
-#import requests python package library
-#import requests
-
-
-
-# take json version of response and normalise it 
-# output as a table
-#dont run anything past here while we troubleshoot
-#streamlit.stop()
-#bring in code from snowflake library
-#import snowflake.connector
-
 #query metadata Make it look nicer
 streamlit.header("View Our Fruit List - Add Your Favorites!")
 #Snowflake-related functions
@@ -87,11 +72,3 @@ if streamlit.button('Add a Fruit to the List'):
     back_from_function = insert_row_snowflake(add_my_fruit)
     my_cnx.close()
     streamlit.text(back_from_function)
-    
-    
-#streamlit.write('Thanks for adding', add_my_fruit)
-
-
-#dont run anything past here while we troubleshoot
-streamlit.stop()
-
